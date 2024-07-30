@@ -1,0 +1,338 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+body {
+  max-width: 1440px;
+  margin: 0 auto !important;
+  background: #EDEDED;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+/* Header
+====================== */
+#logo {
+  position: relative;
+  width: min(100vw, 180.35px);
+  height: min(100vh, 25.26px);
+}
+
+.bg-img {
+  background-image: url(../img/banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 380px;
+}
+
+.header-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(65px, 9vw - 65px, 227px) 0 clamp(65px, 9vw - 65px, 227px) 0;
+}
+.header-block p {
+  color: #FFD15B;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(1.7rem, 5vw, 44px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Badge
+====================== */
+.badge {
+  display: inline-flex;
+  color: #000000;
+  background: #FFD15B;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 17px 18px;
+  align-items: center;
+  gap: 60px;
+  border-radius: 10px;
+  line-height: normal;
+  height: 60px;
+  border: none;
+}
+
+/* Recipe Card
+====================== */
+.card {
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+.card-body {
+  margin: 0 1em 1em 1em;
+}
+.card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 253px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+  color: #000000;
+  font-family: "Anton", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 64px;
+}
+.card-subtitle {
+  color: #7A7A7A;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.card-text {
+  color: #1B1B1B;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card #ingredientsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px 10px;
+}
+.card #ingredientsList li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #1B1B1B;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+.card #ingredientsList li .ingredient-quantity {
+  color: #7A7A7A;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Barre de navigation des filtres
+====================== */
+.navbar {
+  background: rgba(var(--bs-light-rgb), 0) !important;
+}
+
+#totalRecipes {
+  font-family: "Anton", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  float: right;
+  color: #1B1B1B;
+}
+
+section.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+section.navigation-bar nav#filtersNavbar {
+  display: flex;
+  -moz-column-gap: clamp(15px, 4.5vw + 5px, 65px);
+       column-gap: clamp(15px, 4.5vw + 5px, 65px);
+}
+section.navigation-bar nav#filtersNavbar div.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown::first-letter {
+  text-transform: capitalize;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group {
+  position: relative;
+  background-color: white;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group button.drop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  width: 250px;
+  background: #FFFFFF;
+  padding: 16px;
+  color: #1B1B1B;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 10px;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group button.drop:hover {
+  background-color: #fff;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group button.drop span {
+  margin-left: 10px;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group button.drop .arrow {
+  transition: transform 0.3s;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group button.drop .rotate180 {
+  transform: rotate(180deg);
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content {
+  scrollbar-width: none;
+  overflow-y: auto;
+  background: #FFFFFF;
+  color: #1B1B1B;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 10px;
+  width: 100%;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  margin-top: 42px;
+  padding-top: 10px;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul {
+  padding: 0;
+  margin: 0;
+  /* Ajoutez ces nouvelles règles CSS ici */
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul[data-list=mainList] {
+  overflow-y: auto;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul li {
+  list-style: none;
+  padding: 0.4em 0 0.4em 16px;
+  cursor: pointer;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul li:hover {
+  background-color: #FFD15B;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul .selected {
+  background-color: #FFD15B;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul .selected:hover {
+  font-weight: 900;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul .selected img.close-icon {
+  display: none;
+  position: absolute;
+  right: 10px; /* Ajustez la valeur pour positionner la croix à droite */
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul .selected:hover img.close-icon {
+  display: inline-block;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group .input-group {
+  border-radius: 2px;
+  border: 1px solid #C6C6C6;
+  margin: 10px 15px 10px 15px;
+  width: 90% !important;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group .input-group input[type=search] {
+  border: none;
+  outline: none;
+  height: 34px;
+  color: #7A7A7A;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 8px;
+  background: #FFF;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group .input-group .clearInputField {
+  margin: 12px 0 12px 0;
+}
+section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group .input-group .search {
+  height: 14px;
+  transform: translateX(20px) translateY(10px);
+}
+
+/* Searchbar
+====================== */
+#searchbar {
+  width: 70%;
+  position: relative;
+}
+#searchbar input {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #7A7A7A;
+  height: 70px;
+}
+#searchbar input[type=search]::-webkit-search-decoration, #searchbar input[type=search]::-webkit-search-cancel-button, #searchbar input[type=search]::-webkit-search-results-button, #searchbar input[type=search]::-webkit-search-results-decoration {
+  position: relative;
+  right: 70px;
+}
+#searchbar svg#mainCross {
+  place-items: center;
+  position: absolute;
+  right: 80px;
+  top: 22px;
+  display: none;
+}
+#searchbar button {
+  width: 55px;
+  height: 55px;
+  background: #1B1B1B;
+  border-radius: 10px;
+  place-items: center;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 7px;
+}
+#searchbar button:hover {
+  background: #FFD15B;
+  border: none;
+}
+#searchbar button i {
+  color: #FFFFFF;
+  font-size: 25px;
+}
+#searchbar button i:hover {
+  color: #000000;
+}
+
+/* Badges container
+====================== */
+#badgesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* No recipes displayed
+====================== */
+#no-recipes {
+  white-space: nowrap;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,35 @@
+/* Header
+====================== */
+#logo {
+  position: relative;
+  width: calc(min(100vw, 180.35px));
+  height: calc(min(100vh, 25.26px));
+}
+
+.bg-img {
+  background-image: url(../img/banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 380px;
+}
+
+.header-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(65px, calc(9vw - 65px), 227px) 0
+    clamp(65px, calc(9vw - 65px), 227px) 0;
+
+  p {
+    color: $yellow;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: clamp(1.7rem, 5vw, 44px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

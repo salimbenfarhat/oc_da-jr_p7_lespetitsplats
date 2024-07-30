@@ -1,0 +1,17 @@
+/* Badge
+====================== */
+.badge {
+  display: inline-flex;
+  color: $black;
+  background: $yellow;
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 17px 18px;
+  align-items: center;
+  gap: 60px;
+  border-radius: 10px;
+  line-height: normal;
+  height: 60px;
+  border: none;
+}

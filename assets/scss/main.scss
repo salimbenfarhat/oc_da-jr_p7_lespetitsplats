@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@import "abstracts/variables";
+
+// 2. Vendors
+@import "vendors/bootstrap";
+
+// 3. Base stuff
+@import "base/base", "base/fonts", "base/typography";
+
+// 4. Layout-related sections
+@import "layout/header";
+
+// 5. Components
+@import "components/badge", "components/card", "components/filters", "components/searchbar";
+
+// 6. Page-specific styles
+@import "pages/home";

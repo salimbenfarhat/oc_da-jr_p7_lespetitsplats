@@ -1,0 +1,164 @@
+/* Barre de navigation des filtres
+====================== */
+.navbar {
+  background: rgba(var(--bs-light-rgb), 0) !important;
+}
+
+#totalRecipes {
+  font-family: $primary-font;
+  font-size: 21px;
+  font-weight: 400;
+  float: right;
+  color: $deepblack;
+}
+
+section.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  nav#filtersNavbar {
+    display: flex;
+    column-gap: clamp(15px, 4.5vw + 5px, 65px);
+
+    div.dropdown {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+
+      .dropdown-group {
+        position: relative;
+        background-color: white;
+        border-radius: 11px;
+        display: flex;
+        flex-direction: column;
+
+        button.drop {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border: none;
+          width: 250px;
+          background: $white;
+          padding: 16px;
+          color: $deepblack;
+          font-family: $secondary-font;
+          font-size: 16px;
+          text-align: left;
+          border-radius: 10px;
+
+          &:hover {
+            background-color: #fff;
+          }
+
+          span {
+            margin-left: 10px;
+          }
+          .arrow {
+            transition: transform 0.3s;
+          }
+          .rotate180 {
+            transform: rotate(180deg);
+          }
+        }
+
+        div.dropdown-content {
+          scrollbar-width: none;
+          overflow-y: auto;
+          background: $white;
+          color: $deepblack;
+          font-family: $secondary-font;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: normal;
+          border-radius: 10px;
+          width: 100%;
+          max-height: 300px;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          z-index: 2;
+          //overflow: hidden;
+          margin-top: 42px;
+          padding-top: 10px;
+
+          ul {
+            padding: 0;
+            margin: 0;
+
+            &[data-list="mainList"] {
+              overflow-y: auto;
+            }
+
+            li {
+              list-style: none;
+              padding: 0.4em 0 0.4em 16px;
+              cursor: pointer;
+            }
+
+            li:hover {
+              background-color: $yellow;
+            }
+
+            .selected {
+              background-color: $yellow;
+            }
+
+            .selected:hover {
+              font-weight: 900;
+            }
+
+            /* Ajoutez ces nouvelles règles CSS ici */
+            .selected img.close-icon {
+              display: none;
+              position: absolute;
+  right: 10px; /* Ajustez la valeur pour positionner la croix à droite */
+            }
+
+            .selected:hover img.close-icon {
+              display: inline-block;
+              //transform: translateX(110px)
+            }
+
+          }
+        }
+
+        .input-group {
+          border-radius: 2px;
+          border: 1px solid #C6C6C6;
+          margin: 10px 15px 10px 15px;
+          width: 90%!important;
+
+          input[type="search"] {
+            border: none;
+            outline: none;
+            height: 34px;
+            color: #7A7A7A;
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-left: 8px;
+            background: #FFF;
+          }
+
+          .clearInputField {
+            margin: 12px 0 12px 0;
+          }
+
+          .search {
+            height: 14px;
+            transform: translateX(20px) translateY(10px);
+          }
+        }
+      }
+
+    }
+  }
+}

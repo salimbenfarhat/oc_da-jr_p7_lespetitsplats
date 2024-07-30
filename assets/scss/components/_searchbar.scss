@@ -1,0 +1,61 @@
+/* Searchbar
+====================== */
+#searchbar {
+  width: 70%;
+  position: relative;
+
+  input {
+    font-family: $secondary-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: $grey;
+    height: 70px;
+
+    &[type="search"] {
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        position: relative;
+        right: 70px;
+      }
+    }
+
+    
+  }
+
+  svg#mainCross {
+    place-items: center;
+    position: absolute;
+    right: 80px;
+    top: 22px;
+    display: none;
+  }
+
+  button {
+    width: 55px;
+    height: 55px;
+    background: $deepblack;
+    border-radius: 10px;
+    place-items: center;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    top: 7px;
+
+    &:hover {
+      background: $yellow;
+      border: none;
+    }
+
+    i {
+      color: $white;
+      font-size: 25px;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}

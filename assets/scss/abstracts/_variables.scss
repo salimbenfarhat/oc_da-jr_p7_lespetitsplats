@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Primary font family
+/// @type List
+$primary-font: 'Anton', sans-serif !default;
+
+/// Secondary font family
+/// @type List
+$secondary-font: 'Manrope', sans-serif !default;
+
+
+/// Regular deep black color
+/// @type Color
+$deepblack: #1B1B1B !default;
+
+/// Bright yellow color
+/// @type Color
+$yellow: #FFD15B !default;
+
+/// Standard grey color
+/// @type Color
+$grey: #7A7A7A !default;
+
+/// Light grey color
+/// @type Color
+$lightgrey: #EDEDED !default;
+
+/// Pure white color
+/// @type Color
+$white: #FFFFFF !default;
+
+/// Absolute black color
+/// @type Color
+$black: #000000 !default;

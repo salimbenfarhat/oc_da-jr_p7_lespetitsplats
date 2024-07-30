@@ -1,0 +1,15 @@
+/* Badges container
+====================== */
+#badgesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* No recipes displayed
+====================== */
+#no-recipes {
+  white-space: nowrap;
+}
