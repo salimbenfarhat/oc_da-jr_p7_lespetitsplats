@@ -21,11 +21,13 @@ section.navigation-bar {
   nav#filtersNavbar {
     display: flex;
     column-gap: clamp(15px, 4.5vw + 5px, 65px);
+    flex-wrap: wrap; // Ajoutez cette ligne pour permettre le retour à la ligne
 
     div.dropdown {
       display: flex;
       flex-direction: column;
       width: 250px;
+      margin-bottom: 10px; // Ajoutez un espace en bas pour séparer les lignes sur les petits écrans
 
       &::first-letter {
         text-transform: capitalize;
@@ -43,7 +45,7 @@ section.navigation-bar {
           justify-content: space-between;
           align-items: center;
           border: none;
-          width: 250px;
+          width: 100%; // Utilisez 100% au lieu de pixels fixes
           background: $white;
           padding: 16px;
           color: $deepblack;
@@ -83,7 +85,6 @@ section.navigation-bar {
           flex-direction: column;
           position: absolute;
           z-index: 2;
-          //overflow: hidden;
           margin-top: 42px;
           padding-top: 10px;
 
@@ -113,18 +114,15 @@ section.navigation-bar {
               font-weight: 900;
             }
 
-            /* Ajoutez ces nouvelles règles CSS ici */
             .selected img.close-icon {
               display: none;
               position: absolute;
-  right: 10px; /* Ajustez la valeur pour positionner la croix à droite */
+              right: 10px;
             }
 
             .selected:hover img.close-icon {
               display: inline-block;
-              //transform: translateX(110px)
             }
-
           }
         }
 
@@ -158,7 +156,30 @@ section.navigation-bar {
           }
         }
       }
-
     }
+  }
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+  section.navigation-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    nav#filtersNavbar {
+      width: 100%;
+      column-gap: 15px;
+  
+      div.dropdown {
+        width: 100%;
+      }
+    }
+  }
+
+  
+
+  #totalRecipes {
+    float: none;
+    align-self: flex-end;
+    margin-top: 10px;
   }
 }

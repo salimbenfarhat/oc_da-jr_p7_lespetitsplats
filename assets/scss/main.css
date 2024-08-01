@@ -155,11 +155,13 @@ section.navigation-bar nav#filtersNavbar {
   display: flex;
   -moz-column-gap: clamp(15px, 4.5vw + 5px, 65px);
        column-gap: clamp(15px, 4.5vw + 5px, 65px);
+  flex-wrap: wrap;
 }
 section.navigation-bar nav#filtersNavbar div.dropdown {
   display: flex;
   flex-direction: column;
   width: 250px;
+  margin-bottom: 10px;
 }
 section.navigation-bar nav#filtersNavbar div.dropdown::first-letter {
   text-transform: capitalize;
@@ -176,7 +178,7 @@ section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group button.dro
   justify-content: space-between;
   align-items: center;
   border: none;
-  width: 250px;
+  width: 100%;
   background: #FFFFFF;
   padding: 16px;
   color: #1B1B1B;
@@ -219,7 +221,6 @@ section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdo
 section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul {
   padding: 0;
   margin: 0;
-  /* Ajoutez ces nouvelles règles CSS ici */
 }
 section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul[data-list=mainList] {
   overflow-y: auto;
@@ -241,7 +242,7 @@ section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdo
 section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul .selected img.close-icon {
   display: none;
   position: absolute;
-  right: 10px; /* Ajustez la valeur pour positionner la croix à droite */
+  right: 10px;
 }
 section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group div.dropdown-content ul .selected:hover img.close-icon {
   display: inline-block;
@@ -273,6 +274,26 @@ section.navigation-bar nav#filtersNavbar div.dropdown .dropdown-group .input-gro
   transform: translateX(20px) translateY(10px);
 }
 
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+  section.navigation-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  section.navigation-bar nav#filtersNavbar {
+    width: 100%;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+  }
+  section.navigation-bar nav#filtersNavbar div.dropdown {
+    width: 100%;
+  }
+  #totalRecipes {
+    float: none;
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+}
 /* Searchbar
 ====================== */
 #searchbar {
