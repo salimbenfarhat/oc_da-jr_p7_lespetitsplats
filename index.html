@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Les Petits Plats</title>
+  <link rel="stylesheet" href="./assets/scss/main.css">
+  <script src="data/recipes.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+
+<body>
+  <header class="bg-img text-white p-5">
+    <img id="logo" src="./assets/img/Logo.png" alt="Logo Les Petits Plats" height="40" width="330">
+    <div class="header-block">
+      <p>Cherchez parmi plus de 1500 recettes<br>du quotidien, simples et délicieuses</p>
+      <form id="searchbar">
+        <input class="form-control form-control-lg me-2" type="search" name="searchbar"
+          aria-label="Chercher une recette ou un ingrédient" placeholder="Chercher une recette, un ingrédient, ...">
+        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+  </header>
+  <main>
+    <section class="navigation-bar px-5 pt-3 pb-5">
+      <nav id="filtersNavbar">
+
+        <div class="dropdown">
+          <div class="dropdown-group">
+            <button class="drop" data-btn="ingredients">
+              Ingrédients
+              <span class="arrow">
+                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L7.5 7L14 1" stroke="#1B1B1B" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="d-none dropdown-content" id="ingredientsDropdown">
+              <div class="input-group">
+                <input type="search" id="ingredients" class="filtersearch">
+                <img src="assets/icons/search.svg" class="search" alt="Rechercher"/>
+              </div>
+              <ul data-list="ingredientsSelectedList"></ul>
+              <ul data-list="ingredientsMainList"></ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-group">
+            <button class="drop" data-btn="appliances">
+              Appareils
+              <span class="arrow">
+                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L7.5 7L14 1" stroke="#1B1B1B" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="d-none dropdown-content" id="appliancesDropdown">
+              <div class="input-group">
+                <input type="search" id="appliances" class="filtersearch">
+                <img src="assets/icons/search.svg" class="search" alt="Rechercher"/>
+              </div>
+              <ul data-list="appliancesSelectedList"></ul>
+              <ul data-list="appliancesMainList"></ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-group">
+            <button class="drop" data-btn="utensils">
+              Ustensiles
+              <span class="arrow">
+                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L7.5 7L14 1" stroke="#1B1B1B" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="d-none dropdown-content" id="utensilsDropdown">
+              <div class="input-group">
+                <input type="search" id="utensils" class="filtersearch">
+                <img src="assets/icons/search.svg" class="search" alt="Rechercher"/>
+              </div>
+              <ul data-list="utensilsSelectedList"></ul>
+              <ul data-list="utensilsMainList"></ul>
+            </div>
+          </div>
+
+        </div>
+
+      </nav>
+      <b id="totalRecipes"></b>
+    </section>
+    <div class="filter__selected"></div>
+    <section id="badgesContainer" class="px-5 py-5">
+    </section>
+    <section class="row row-cols-1 row-cols-md-3 g-5 px-5 pb-5" id="recipes"></section>
+  </main>
+
+  <!-- Entry point -->
+  
+  <template id="recipeCard">
+    <div class="col">
+      <div class="card">
+        <img class="card-img-top">
+        <div class="card-img-overlay d-flex justify-content-end">
+          <span class="badge"></span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <span class="card-subtitle">Recette</span>
+          <p class="card-text"></p>
+          <span class="card-subtitle">Ingrédients</span>
+          <ul id="ingredientsList"></ul>
+        </div>
+      </div>
+    </div>
+  </template>
+</body>
+
+</html>
