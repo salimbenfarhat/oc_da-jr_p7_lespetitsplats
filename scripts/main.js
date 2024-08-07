@@ -6,35 +6,24 @@ let ingredients = [];
 let appliances = [];
 let utensils = [];
 
-// Version avec boucles natives pour filtrer les recettes en fonction du terme de recherche
-function filterBySearch_v1(_recipes, searchTerm) {
-  let results = []; // Initialise le tableau des résultats
-  // Parcourt le tableau des recettes
-  for (let i = 0; i < _recipes.length; i++) {
-    let recipe = _recipes[i]; // la recette courante
-    // Vérifie si le terme de recherche est inclus dans le titre ou la description de la recette
-    if (
-      recipe.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      recipe.description.toLowerCase().includes(searchTerm.toLowerCase())
-    ) {
-      results.push(recipe); // Ajoute la recette aux résultats si correspondance
-      continue; // Passe à la recette suivante
-    }
+// Version avec programmation fonctionnelle pour filtrer les recettes en fonction du terme de recherche
+function filterBySearch_v2(_recipes, searchTerm) {
+  const lowerCaseSearchTerm = searchTerm.toLowerCase();
 
-    // Parcourt chaque ingrédient de la recette courante
-    for (let j = 0; j < recipe.ingredients.length; j++) {
-      // Vérifie si le terme de recherche est inclus dans l'ingrédient
-      if (
-        recipe.ingredients[j].ingredient
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
-      ) {
-        results.push(recipe); // Ajoute la recette aux résultats si correspondance
-        break; // Sort de la boucle d'ingrédients car correspondance trouvée
-      }
-    }
-  }
-  return results; // Retourne le tableau des résultats
+  // Filtre le tableau des recettes
+  return _recipes.filter(recipe => {
+    // Convertit le nom et la description de la recette en minuscule une seule fois
+    const lowerCaseName = recipe.name.toLowerCase();
+    const lowerCaseDescription = recipe.description.toLowerCase();
+
+    // Vérifie si le terme de recherche est inclus dans le nom, la description ou les ingrédients de la recette
+    return lowerCaseName.includes(lowerCaseSearchTerm) ||
+           lowerCaseDescription.includes(lowerCaseSearchTerm) ||
+           recipe.ingredients.some(ingredient => {
+             const lowerCaseIngredient = ingredient.ingredient.toLowerCase();
+             return lowerCaseIngredient.includes(lowerCaseSearchTerm);
+           });
+  });
 }
 
 // Filtrer les recettes en fonction des ingrédients sélectionnés
@@ -212,15 +201,15 @@ function filterRecipes() {
   const searchTerm = document.querySelector("#searchbar input").value;
 
   // Choisir la méthode de filtrage (mettre true pour utiliser les boucles natives)
-  const useNativeLoops = true; // ou false pour la version fonctionnelle
+  const useNativeLoops = false; // ou false pour la version fonctionnelle
 
   if (searchTerm && searchTerm.trim().length > 2) {
     if (useNativeLoops) {
-      _recipes = filterBySearch_v1(_recipes, searchTerm.toLowerCase());
-    } else {
       console.error(
-        "La fonction filterBySearch_v2 n'est pas disponible. Veuillez la récupérer depuis la branche option-2."
+        "La fonction filterBySearch_v1 n'est pas disponible. Veuillez la récupérer depuis la branche option-1."
       );
+    } else {
+      _recipes = filterBySearch_v2(_recipes, searchTerm.toLowerCase());
     }
   }
 
